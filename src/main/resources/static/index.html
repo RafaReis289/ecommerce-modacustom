@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <title>Moda Custom — Vista sua ideia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <div class="announcement">
+    <span>✦</span> SUA IDEIA, SEU ESTILO
+    <i>—</i> PERSONALIZE SEM LIMITES <span>✦</span>
+  </div>
+
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="#inicio" aria-label="Moda Custom - início">
+        <img
+          id="brandLogo"
+          src="img/logo.png"
+          alt="Logo Moda Custom"
+          onerror="this.style.display='none';document.getElementById('brandPlaceholder').style.display='grid'"
+        >
+        <span id="brandPlaceholder" class="brand-monogram" style="display:none">MC</span>
+        <span class="brand-wordmark">
+          MODA<span>CUSTOM</span>
+          <small>USE YOUR IMAGINATION</small>
+        </span>
+      </a>
+
+      <form class="search" id="searchForm" role="search">
+        <span class="search-icon">⌕</span>
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Buscar peças, estilos ou lojas..."
+          aria-label="Buscar peças, estilos ou lojas"
+        >
+        <button type="submit">Buscar</button>
+      </form>
+
+      <div class="header-actions">
+        <button class="action-button favorite-icon-only" id="favTop" aria-label="Abrir favoritos" title="Favoritos">
+          <span class="action-icon">♡</span>
+          <b id="favCount">0</b>
+        </button>
+
+        <button class="action-button" id="cartTop" aria-label="Abrir carrinho">
+          <span class="action-icon">▱</span>
+          <span class="action-label">Carrinho</span>
+          <b id="cartCount">0</b>
+        </button>
+
+        <button class="action-button seller-action" id="sellerOpen">
+          <span class="action-icon">✳</span>
+          <span class="action-label" id="sellerActionLabel">Minha loja / Vendedor</span>
+        </button>
+
+        <button class="action-button signup-action" id="clientOpen">
+          <span class="action-icon" aria-hidden="true">👤</span>
+          <span class="action-label" id="clientActionLabel">Entrar / Criar conta</span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a class="nav-link active" href="#inicio"><span>⌂</span> Início</a>
+      <a class="nav-link" href="#explorar"><span>✦</span> Explorar</a>
+      <a class="nav-link" href="#lojas"><span>▦</span> Lojas independentes</a>
+      <a class="nav-link" href="#personalizar"><span>✎</span> Personalize sua roupa</a>
+      <a class="nav-link" href="#sobre"><span>◈</span> Sobre nós</a>
+      <span class="nav-note">MODA AUTORAL · FEITA POR VOCÊ</span>
+    </nav>
+  </header>
+
+  <main>
+    <!-- INÍCIO -->
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow"><span>✦</span> MODA AUTORAL, DO SEU JEITO</p>
+
+        <h1>
+          Vista o que você ama.<br>
+          <em>Crie o que é seu.</em>
+        </h1>
+
+        <p class="hero-description">
+          Camisetas de música, cultura pop, terceirão e streetwear.
+          Encontre criadores independentes ou transforme sua própria
+          ideia em uma peça única.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="button button-gold" href="#explorar">
+            Explorar estampas <span>↗</span>
+          </a>
+          <a class="button button-outline" href="#personalizar">
+            Criar minha camiseta
+          </a>
+        </div>
+
+        <div class="hero-highlights">
+          <span>Estampas criativas</span>
+          <span>Lojas independentes</span>
+          <span>Seu estilo, suas regras</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-photo"></div>
+        <div class="hero-frame"></div>
+
+        <div class="hero-label">
+          <small>MC / ORIGINALS</small>
+          <strong>BE YOUR OWN BRAND.</strong>
+        </div>
+
+        <div class="hero-stamp">
+          MODA<br>
+          <b>SEM LIMITES</b>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPLORAR -->
+    <section class="section collection-section" id="explorar">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ENCONTRE SUA PRÓXIMA FAVORITA</p>
+          <h2>Estampas para <em>se expressar.</em></h2>
+          <p class="section-subtitle">
+            18 peças selecionadas para você encontrar seu estilo.
+          </p>
+        </div>
+
+        <div class="section-side-note">
+          <span class="gold-dot"></span>
+          NOVAS IDEIAS, NOVOS CRIADORES
+        </div>
+      </div>
+
+      <div class="filter-bar" id="productFilters">
+        <button class="filter active" data-category="Todos">Tudo</button>
+        <button class="filter" data-category="Música">Música & artistas</button>
+        <button class="filter" data-category="Cultura pop">Cultura pop</button>
+        <button class="filter" data-category="Terceirão">Terceirão</button>
+        <button class="filter" data-category="Esporte">Esporte</button>
+        <button class="filter" data-category="Streetwear">Streetwear</button>
+        <button class="filter" data-category="Personalizável">Básicas para personalizar</button>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+
+      <p class="empty-message hidden" id="emptyState">
+        Não encontramos peças com essa busca. Experimente outra palavra ou categoria.
+      </p>
+
+      <!-- LOJAS -->
+      <div class="stores-intro" id="lojas">
+        <div>
+          <p class="eyebrow">CONHEÇA QUEM CRIA</p>
+          <h2>Lojas com <em>identidade própria.</em></h2>
+          <p class="section-subtitle">
+            Descubra cinco lojas independentes e suas coleções.
+          </p>
+        </div>
+
+        <span class="stores-count">05 LOJAS <b>·</b> 25 PEÇAS</span>
+      </div>
+
+      <div class="filter-bar store-filter-bar" id="storeFilters">
+        <button class="filter active" data-store-category="Todas">Todas as lojas</button>
+        <button class="filter" data-store-category="Streetwear">Streetwear</button>
+        <button class="filter" data-store-category="Música">Música & artistas</button>
+        <button class="filter" data-store-category="Terceirão">Terceirão</button>
+        <button class="filter" data-store-category="Personalizáveis">Personalizáveis</button>
+        <button class="filter" data-store-category="Cultura pop">Cultura pop</button>
+      </div>
+
+      <div class="store-grid" id="lojasGrid"></div>
+    </section>
+
+  <!-- PERSONALIZAÇÃO -->
+    <section class="custom-section" id="personalizar">
+      <div class="custom-image">
+        <span class="custom-image-note">IDEIA SUA.<br>PEÇA ÚNICA.</span>
+      </div>
+
+      <div class="custom-copy">
+        <p class="eyebrow">SEU ESTILO COMEÇA NO PAPEL</p>
+        <h2>Você imagina.<br><em>A gente dá forma.</em></h2>
+
+        <p>
+          Escolha o tipo de peça, a cor e o tema da estampa.
+          Pode ser para o terceirão, uma referência musical,
+          uma frase ou uma arte autoral.
+        </p>
+
+        <button class="button button-gold" id="customOpen">
+          Começar personalização <span>↗</span>
+        </button>
+
+        <small>Seu próximo look começa com uma ideia.</small>
+      </div>
+    </section>
+
+    <!-- PAINEL DO VENDEDOR -->
+    <section class="section seller-dashboard hidden" id="sellerDashboard">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PAINEL DO CRIADOR</p>
+          <h2 id="dashboardStoreName">Minha <em>loja.</em></h2>
+          <p class="section-subtitle" id="dashboardStoreDescription"></p>
+        </div>
+        <button class="button button-outline" id="sellerLogout" type="button">Voltar à tela inicial</button>
+      </div>
+      <div class="seller-notification-toolbar">
+        <button class="button button-outline" id="sellerNotificationsToggle" type="button" aria-expanded="false">
+          🔔 Solicitações de pedidos <span id="sellerNotificationBadge" class="notification-badge">0</span>
+        </button>
+      </div>
+      <section id="sellerNotificationsPanel" class="seller-notifications hidden" aria-label="Solicitações de pedidos">
+        <h3>Solicitações recebidas</h3>
+        <div id="sellerNotificationsList"></div>
+      </section>
+      <div class="dashboard-grid">
+        <form id="productForm" class="dashboard-form">
+          <h3>Adicionar nova roupa</h3>
+          <label>Nome da peça<input name="nome" required maxlength="120" placeholder="Ex.: Camiseta Oversized"></label>
+          <label>Descrição<textarea name="descricao" required maxlength="2000" placeholder="Descreva tecido, modelagem e detalhes"></textarea></label>
+          <div class="form-two">
+            <label>Preço (R$)<input name="preco" type="number" min="0.01" step="0.01" required></label>
+            <label>Estoque<input name="estoque" type="number" min="0" step="1" required></label>
+          </div>
+          <label>Categoria<input name="categoria" required placeholder="Streetwear, casual..."></label>
+          <label>Imagem da roupa<input name="imagem" type="file" accept="image/*"></label>
+          <button class="button button-gold" type="submit">Publicar roupa</button>
+        </form>
+        <div class="dashboard-products">
+          <h3>Roupas da minha loja</h3>
+          <div id="sellerProducts" class="seller-products-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="about-section" id="sobre">
+      <div>
+        <p class="eyebrow">A MODA CUSTOM</p>
+        <h2>Vista uma ideia.<br><em>Conte sua história.</em></h2>
+      </div>
+
+      <div class="about-copy">
+        <p>
+          Conectamos clientes e vendedores independentes em uma vitrine
+          de roupas personalizadas. Cada loja tem seu estilo, suas coleções
+          e sua história — e você escolhe o que combina com a sua.
+        </p>
+        <a href="#lojas" class="text-link">Conhecer os criadores ↗</a>
+      </div>
+    </section>
+
+    <!-- CONVITE PARA VENDEDORES -->
+    <section class="seller-banner">
+      <div>
+        <p class="eyebrow">VOCÊ CRIA. A GENTE CONECTA.</p>
+        <h2>Tem uma marca ou uma ideia?</h2>
+        <p>Abra sua loja e apresente suas estampas para a comunidade.</p>
+      </div>
+
+      <button class="button button-gold" id="sellerOpen2">
+        Abrir minha loja ↗
+      </button>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#inicio">
+      <span class="brand-monogram">MC</span>
+      <span class="brand-wordmark">MODA<span>CUSTOM</span><small>USE YOUR IMAGINATION</small></span>
+    </a>
+
+    <small>© 2026 Moda Custom · Projeto demonstrativo</small>
+
+    <div>
+      <a href="#lojas">Lojas</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="#personalizar">Personalização</a>
+    </div>
+  </footer>
+
+  <button class="floating-theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema" title="Alternar tema claro/escuro"><span id="themeIcon">☀</span></button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ENTRADA DE CLIENTES -->
+  <dialog id="clientLoginDialog">
+    <button class="close" data-close="clientLoginDialog" aria-label="Fechar">×</button>
+    <p class="eyebrow">BEM-VINDO DE VOLTA</p>
+    <h2>Entrar na minha conta</h2>
+    <form class="form-grid" id="clientLoginForm">
+      <label>E-mail cadastrado
+        <input required type="email" name="email" autocomplete="username" placeholder="voce@email.com">
+      </label>
+      <label>Senha
+        <input required type="password" name="senha" autocomplete="current-password" placeholder="Sua senha">
+      </label>
+      <button class="button button-gold" type="submit">Entrar</button>
+    </form>
+    <div class="login-alternative">
+      <p>Ainda não possui uma conta?</p>
+      <button type="button" class="button button-outline" id="openRegisterFromLogin">Criar minha conta</button>
+    </div>
+  </dialog>
+
+  <!-- CADASTRO DE CLIENTES -->
+  <dialog id="clientDialog">
+    <button class="close" data-close="clientDialog" aria-label="Fechar">×</button>
+    <p class="eyebrow">BEM-VINDO À MODA CUSTOM</p>
+    <h2>Crie sua conta</h2>
+
+    <form class="form-grid" id="clientForm">
+      <label>Nome completo
+        <input required name="nome" placeholder="Seu nome">
+      </label>
+
+      <label>E-mail
+        <input required type="email" name="email" placeholder="voce@email.com">
+      </label>
+
+      <label>CPF (11 números)
+        <input required name="cpf" class="cpf-input" inputmode="numeric"
+          autocomplete="off" maxlength="11" minlength="11"
+          pattern="[0-9]{11}" placeholder="Somente 11 números"
+          title="Digite exatamente 11 números, sem pontos ou traço">
+      </label>
+
+      <label>Senha
+        <input required type="password" minlength="8" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}" title="Use 8 caracteres ou mais, com maiúscula, minúscula, número e símbolo" name="senha" class="strong-password"
+          autocomplete="new-password" placeholder="Crie uma senha forte">
+        <small class="password-hint">8+ caracteres, maiúscula, minúscula, número e símbolo.</small>
+      </label>
+
+      <label>Estilo favorito
+        <select name="estilo">
+          <option>Streetwear</option>
+          <option>Música & artistas</option>
+          <option>Terceirão</option>
+          <option>Esporte</option>
+          <option>Cultura pop</option>
+        </select>
+      </label>
+
+      <button class="button button-gold" type="submit">Cadastrar</button>
+      <div class="login-alternative">
+        <p>Já possui uma conta?</p>
+        <button type="button" class="button button-outline" id="openLoginFromRegister">Entrar na minha conta</button>
+      </div>
+      <p class="form-note">Após o cadastro, sua conta ficará disponível para as próximas compras.</p>
+    </form>
+  </dialog>
+
+  <!-- ENTRADA DE VENDEDORES -->
+  <dialog id="sellerLoginDialog">
+    <button class="close" data-close="sellerLoginDialog" aria-label="Fechar">×</button>
+    <p class="eyebrow">ÁREA DO VENDEDOR</p>
+    <h2>Entrar na minha loja</h2>
+    <form class="form-grid" id="sellerLoginForm">
+      <label>E-mail cadastrado<input required type="email" name="email" autocomplete="username" placeholder="loja@email.com"></label>
+      <label>Senha<input required type="password" name="senha" autocomplete="current-password" placeholder="Sua senha"></label>
+      <button class="button button-gold" type="submit">Entrar na minha loja</button>
+    </form>
+    <div class="login-alternative">
+      <p>Ainda não tem uma loja cadastrada?</p>
+      <button type="button" class="button button-outline" id="openSellerRegister">Criar minha loja</button>
+    </div>
+  </dialog>
+
+  <!-- CADASTRO DE VENDEDORES -->
+  <dialog id="sellerDialog">
+    <button class="close" data-close="sellerDialog" aria-label="Fechar">×</button>
+    <p class="eyebrow">VENHA CRIAR COM A GENTE</p>
+    <h2>Abra sua loja</h2>
+
+    <form class="form-grid" id="sellerForm">
+      <label>Nome do responsável
+        <input required name="responsavel" placeholder="Seu nome completo">
+      </label>
+
+      <label>Nome da loja/marca
+        <input required name="marca" placeholder="Nome da sua loja">
+      </label>
+
+      <label>E-mail comercial
+        <input required type="email" name="email" placeholder="loja@email.com">
+      </label>
+
+      <label>CNPJ da loja (14 números)
+        <input required name="cnpj" inputmode="numeric" maxlength="14" minlength="14" pattern="[0-9]{14}" placeholder="Somente números">
+      </label>
+
+      <label>Categoria principal
+        <select name="categoria">
+          <option>Streetwear</option>
+          <option>Música & artistas</option>
+          <option>Terceirão</option>
+          <option>Esporte</option>
+          <option>Cultura pop</option>
+        </select>
+      </label>
+
+      <label>Descrição da loja
+        <textarea required name="descricao" placeholder="Conte sobre suas estampas e seu estilo"></textarea>
+      </label>
+
+      <label>Senha
+        <input required type="password" minlength="8" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}" title="Use 8 caracteres ou mais, com maiúscula, minúscula, número e símbolo" name="senha" class="strong-password"
+          autocomplete="new-password" placeholder="Crie uma senha forte">
+        <small class="password-hint">8+ caracteres, maiúscula, minúscula, número e símbolo.</small>
+      </label>
+
+      <button class="button button-gold" type="submit">Criar loja demonstrativa</button>
+      <div class="login-alternative">
+        <p>Já possui uma conta de vendedor?</p>
+        <button type="button" class="button button-outline" id="openSellerLogin">Entrar na minha loja</button>
+      </div>
+      <p class="form-note">Após criar sua conta, você irá direto para o painel da sua loja.</p>
+    </form>
+  </dialog>
+
+  <!-- CONTA DO VENDEDOR -->
+  <dialog id="sellerAccountDialog">
+    <button class="close" data-close="sellerAccountDialog" aria-label="Fechar">×</button>
+    <p class="eyebrow">MINHA CONTA</p>
+    <h2>Cadastro e informações da loja</h2>
+    <form id="sellerAccountForm" class="form-grid">
+      <label>Nome do responsável<input name="nome" required maxlength="120"></label>
+      <label>Nome da loja<input name="nomeLoja" required maxlength="120"></label>
+      <label>E-mail<input name="email" type="email" readonly></label>
+      <label>CNPJ<input name="cnpj" inputmode="numeric" maxlength="14" minlength="14" pattern="[0-9]{14}" readonly></label>
+      <label>Categoria<select name="categoriaLoja"><option>Streetwear</option><option>Música & artistas</option><option>Terceirão</option><option>Esporte</option><option>Cultura pop</option></select></label>
+      <label>Descrição da loja<textarea name="descricao" maxlength="2000"></textarea></label>
+      <button class="button button-gold" type="submit">Salvar alterações</button>
+      <button class="button button-outline" id="goSellerDashboard" type="button">Abrir painel da minha loja</button>
+      <button class="button button-outline" id="sellerAccountLogout" type="button">Sair da conta</button>
+    </form>
+  </dialog>
+
+  <!-- CONTA DO CLIENTE -->
+  <dialog id="clientAccountDialog">
+    <button class="close" data-close="clientAccountDialog" aria-label="Fechar">×</button>
+    <p class="eyebrow">ÁREA DO CLIENTE</p>
+    <h2>Minha conta</h2>
+    <div class="account-summary" id="clientAccountSummary"></div>
+    <h3>Minhas compras</h3>
+    <div id="clientPurchases" class="purchase-list"></div>
+    <button class="button button-outline" id="clientLogout" type="button">Sair da conta</button>
+  </dialog>
+
+  <!-- ACOMPANHAMENTO DO PEDIDO -->
+  <dialog id="trackingDialog">
+    <button class="close" data-close="trackingDialog" aria-label="Fechar">×</button>
+    <p class="eyebrow">ACOMPANHAMENTO</p>
+    <h2>Seu pedido</h2>
+    <div id="trackingContent"></div>
+    <p class="form-note">Prazos e etapas são simulados para demonstração e não representam rastreamento de transportadora real.</p>
+  </dialog>
+
+  <!-- PERSONALIZAÇÃO -->
+  <dialog id="customDialog">
+    <button class="close" data-close="customDialog" aria-label="Fechar">×</button>
+    <p class="eyebrow">LABORATÓRIO CRIATIVO</p>
+    <h2>Personalize sua roupa</h2>
+
+    <div class="custom-builder">
+      <div class="shirt-stage" id="shirtStage" aria-label="Prévia da roupa">
+        <svg viewBox="0 0 300 300" role="img" aria-label="Modelo de camiseta">
+          <path id="shirtShape" d="M92 38 L122 22 Q150 42 178 22 L208 38 L266 92 L230 137 L205 116 L205 270 L95 270 L95 116 L70 137 L34 92 Z" fill="#202020" stroke="#b99a43" stroke-width="3"/>
+        </svg>
+        <img id="customArtworkPreview" class="artwork-preview hidden" alt="Arte aplicada à camiseta">
+        <span id="shirtTextPreview">SUA ARTE</span>
+      </div>
+      <div class="builder-controls">
+    <form class="form-grid" id="customForm">
+      <label>Tipo de peça
+        <select name="tipo" id="customType">
+          <option>Camiseta</option>
+          <option>Moletom</option>
+          <option>Baby look</option>
+          <option>Regata</option>
+          <option>Ecobag</option>
+        </select>
+      </label>
+
+      <label>Tema da estampa
+        <select name="tema">
+          <option>Música & artistas</option>
+          <option>Terceirão / formatura</option>
+          <option>Esporte</option>
+          <option>Cultura pop</option>
+          <option>Streetwear</option>
+          <option>Minha própria arte</option>
+        </select>
+      </label>
+
+      <label>Cor da peça
+        <select name="cor">
+          <option>Preta</option>
+          <option>Branca</option>
+          <option>Off-white</option>
+          <option>Areia</option>
+          <option>Verde</option>
+          <option>Azul</option>
+        </select>
+      </label>
+
+      <label>Texto ou ideia
+        <input name="ideia" id="customIdea" maxlength="80" placeholder="Nome da turma, frase, tema...">
+      </label>
+      <label>Enviar sua própria imagem
+        <input name="arte" id="customArtwork" type="file" accept="image/*">
+      </label>
+      <label>Posição da estampa
+        <select name="posicao" id="customPosition"><option value="centro">Centro</option><option value="peito">Peito</option><option value="costas">Costas</option></select>
+      </label>
+
+      <label>Detalhes adicionais
+        <textarea name="detalhes" placeholder="Descreva como imagina sua estampa"></textarea>
+      </label>
+
+      <button class="button button-gold" type="submit">Salvar minha ideia</button>
+      <p class="form-note">Use apenas imagens e artes que você tenha autorização para reproduzir.</p>
+    </form>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- DETALHES DA LOJA -->
+  <dialog id="storeDialog">
+    <button class="close store-close" data-close="storeDialog" aria-label="Sair da loja">
+      ×
+    </button>
+    <div id="storeDetails"></div>
+  </dialog>
+
+  <!-- FAVORITOS -->
+  <dialog id="favoritesDialog">
+    <button class="close" data-close="favoritesDialog" aria-label="Fechar">×</button>
+    <p class="eyebrow">SUAS ESCOLHAS</p>
+    <h2>Meus favoritos</h2>
+    <div id="favoriteItems"></div>
+  </dialog>
+
+  <!-- CARRINHO -->
+  <dialog id="cartDialog">
+    <button class="close" data-close="cartDialog" aria-label="Fechar">×</button>
+    <p class="eyebrow">SUAS ESCOLHAS</p>
+    <h2>Meu carrinho</h2>
+    <div id="cartItems"></div>
+    <p class="cart-total">Total <strong id="cartTotal">R$ 0,00</strong></p>
+    <button class="button button-gold full" id="checkout">Continuar compra</button>
+  </dialog>
+
+  <!-- FINALIZAÇÃO DE COMPRA -->
+  <dialog id="checkoutDialog">
+    <button class="close" data-close="checkoutDialog" aria-label="Fechar">×</button>
+    <p class="eyebrow">MODA CUSTOM</p>
+    <h2>Finalizar compra</h2>
+    <div id="checkoutResumo"></div>
+
+    <form id="checkoutForm" class="form-grid">
+      <label>CPF do comprador
+        <input name="cpf" class="cpf-input" inputmode="numeric" autocomplete="off" maxlength="11" minlength="11" pattern="[0-9]{11}" required placeholder="Somente 11 números">
+      </label>
+      <label>Endereço de entrega
+        <input name="endereco" required placeholder="Rua, avenida e bairro">
+      </label>
+      <label>Número
+        <input name="numeroEndereco" required maxlength="12" placeholder="Número do imóvel">
+      </label>
+      <label>Complemento (opcional)
+        <input name="complemento" placeholder="Apto, bloco, referência">
+      </label>
+      <label>Loja para a qual deseja enviar o pedido
+        <select name="lojaId" id="checkoutStore" required>
+          <option value="">Selecione a loja</option>
+        </select>
+      </label>
+      <label>Forma de pagamento
+        <select name="pagamento" required>
+          <option value="">Selecione</option><option value="PIX">PIX</option><option value="Cartão de crédito">Cartão de crédito</option><option value="Boleto">Boleto</option>
+        </select>
+      </label>
+      <button class="button button-gold" type="submit">Confirmar pedido</button>
+      <p class="form-note">Seus dados de cadastro são reaproveitados. Não é necessário informar nome, e-mail ou cidade novamente. Pagamento demonstrativo.</p>
+    </form>
+  </dialog>
+</body>
+</html>
